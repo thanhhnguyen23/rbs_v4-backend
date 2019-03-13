@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Build started on `date`
+      - mvn test
+  build:
+    commands:
+      - echo Build completed on `date`
+      - mvn clean package
+      - mv target/revature_book_store_v4-0.0.1-SNAPSHOT.war revature_book_store_v4-0.0.1-SNAPSHOT.war
+artifacts:
+  files:
+    - revature_book_store_v4-0.0.1-SNAPSHOT.war
+    - .ebextensions/**/*
